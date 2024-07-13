@@ -1,0 +1,56 @@
+{% extends "base.html"%} 
+{% block start %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content_wrapper" id="app">
+        <div v-if="infos.city">
+            <h1>
+                Weather
+                <div class="date">}</div>
+            </h1>
+            <form class="" method="get">
+                <input class="form-control" name="city">
+                <button class="" type="submit">Submit</button>
+
+            </form>
+    
+            <div class="weather_card">
+                <div class="weather_card_img" :style="{backgroundImage:http://openweather.org/img/wn/}"{{data.icon}}>
+                    <div class="weather_card_state">
+                        <span class="material-icons">
+                            {{data.city}}
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="weather_card_infos"></div>
+                    <div class="weather_card_infos_title">
+                        
+                    </div>
+                    <div class="weather_card_infos_temp">
+                        {{celsius}}°C / {{fahrenheit}}°F
+                    </div>
+                    <div class="bottom">
+                        <hr>
+                        <div class="weather_card_infos_bottom">
+                            humidity: {{data.humidity}} - pressure: {{data.pressure}}Pa
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+{% endblock %} 
